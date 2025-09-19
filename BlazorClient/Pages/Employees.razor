@@ -1,0 +1,82 @@
+﻿@page "/employees"
+
+@using BlazorShared;
+@using CurrieTechnologies.Razor.SweetAlert2;
+@using BlazorClient.Services;
+
+@inject SweetAlertService swAlert;
+@inject IEmployeeService employeeService;
+
+<h4>Employees</h4>
+
+<a class="btn btn-success btn-sm mb-3" href="/employee">New employee</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Departament</th>
+            <th>Salary</th>
+            <th>Contract Date</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (list == null)
+        {
+            <tr>
+                <td colspan="5" align="center">
+                    Loading...
+                </td>
+            </tr>
+        }
+        else
+        {
+            @foreach (var e in list)
+            {
+                <tr>
+                    <td>@e.Name</td>
+                    <td>@e.Department?.Name</td>
+                    <td>@e.Salary</td>
+                    <td>@e.ContractDate.ToString("dd/MM/yyyy")</td>
+                    <td>
+                        <a class="btn btn-warning btn-sm" href="employee/@e.IdEmployee">
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                        </a>
+                        <button type="button" class="btn btn-danger btn-sm ms-2" @onclick="(() => Delete(e.IdEmployee))">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </button>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@code {
+    List<EmployeeDTO>? list;
+
+    protected override async Task OnInitializedAsync()
+    {
+        list = await employeeService.List();
+    }
+
+    private async Task Delete(int id)
+    {
+        var result = await swAlert.FireAsync(new SweetAlertOptions
+            {
+                Title = "Eliminar empleado",
+                Text = "Tas seguro que queres eliminar?",
+                Icon = SweetAlertIcon.Question,
+                ShowCancelButton = true
+            });
+
+        if (result.IsConfirmed)
+        {
+            var deleted = await employeeService.Delete(id);
+
+            if (deleted)
+                list = list!.FindAll(e => e.IdEmployee != id);
+        }
+    }
+}

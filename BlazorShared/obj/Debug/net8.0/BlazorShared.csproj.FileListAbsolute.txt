@@ -1,0 +1,11 @@
+C:\Users\RNDM\Desktop\practicas\BlazorTest\BlazorShared\bin\Debug\net8.0\BlazorShared.deps.json
+C:\Users\RNDM\Desktop\practicas\BlazorTest\BlazorShared\bin\Debug\net8.0\BlazorShared.dll
+C:\Users\RNDM\Desktop\practicas\BlazorTest\BlazorShared\bin\Debug\net8.0\BlazorShared.pdb
+C:\Users\RNDM\Desktop\practicas\BlazorTest\BlazorShared\obj\Debug\net8.0\BlazorShared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\RNDM\Desktop\practicas\BlazorTest\BlazorShared\obj\Debug\net8.0\BlazorShared.AssemblyInfoInputs.cache
+C:\Users\RNDM\Desktop\practicas\BlazorTest\BlazorShared\obj\Debug\net8.0\BlazorShared.AssemblyInfo.cs
+C:\Users\RNDM\Desktop\practicas\BlazorTest\BlazorShared\obj\Debug\net8.0\BlazorShared.csproj.CoreCompileInputs.cache
+C:\Users\RNDM\Desktop\practicas\BlazorTest\BlazorShared\obj\Debug\net8.0\BlazorShared.dll
+C:\Users\RNDM\Desktop\practicas\BlazorTest\BlazorShared\obj\Debug\net8.0\refint\BlazorShared.dll
+C:\Users\RNDM\Desktop\practicas\BlazorTest\BlazorShared\obj\Debug\net8.0\BlazorShared.pdb
+C:\Users\RNDM\Desktop\practicas\BlazorTest\BlazorShared\obj\Debug\net8.0\ref\BlazorShared.dll
